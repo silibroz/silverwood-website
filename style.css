@@ -60,7 +60,7 @@ section{
 
 .top-bar{
     background:#c27935;
-    color:rgb(255, 255, 255);
+    color:#fff;
     display:flex;
     justify-content:space-between;
     align-items:center;
@@ -114,13 +114,14 @@ nav a:hover{
 }
 
 .nav-btn:hover{
-    background:#333;
+    background:#b89045;
 }
 
 .mobile-menu{
     display:none;
     font-size:28px;
     cursor:pointer;
+    color:#111;
 }
 
 
@@ -133,22 +134,17 @@ nav a:hover{
     min-height:560px;
     padding:60px 5% 140px;
     align-items:center;
+    background-image:url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=2400&auto=format&fit=crop');
+    background-size:cover;
+    background-position:center;
 }
 
 .hero-overlay{
     position:absolute;
     inset:0;
     background:
-    linear-gradient(
-        to right,
-        rgba(0,0,0,0.82),
-        rgba(0,0,0,0.35)
-    ),
-    linear-gradient(
-        to top,
-        rgba(0,0,0,0.55),
-        transparent
-    );
+        linear-gradient(to right, rgba(0,0,0,0.78), rgba(0,0,0,0.3)),
+        linear-gradient(to top, rgba(0,0,0,0.6), transparent);
 }
 
 .hero-content{
@@ -175,10 +171,10 @@ nav a:hover{
 }
 
 .hero-description{
-    font-size:20px;
+    font-size:18px;
     line-height:1.9;
-    color:rgba(255,255,255,0.82);
-    max-width:620px;
+    color:rgba(255,255,255,0.78);
+    max-width:580px;
     margin-bottom:42px;
     font-weight:300;
 }
@@ -191,9 +187,11 @@ nav a:hover{
 .primary-btn{
     background:#d2ab67;
     color:white;
-    padding:18px 34px;
-    font-size:14px;
-    letter-spacing:1px;
+    padding:16px 32px;
+    font-size:13px;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    border-radius:2px;
 }
 
 .primary-btn:hover{
@@ -202,15 +200,19 @@ nav a:hover{
 
 .secondary-btn{
     background:transparent;
-    border:1px solid rgba(255,255,255,0.3);
+    border:1px solid rgba(255,255,255,0.4);
     color:white;
-    padding:18px 34px;
-    font-size:14px;
+    padding:16px 32px;
+    font-size:13px;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
     backdrop-filter:blur(10px);
+    border-radius:2px;
 }
 
 .secondary-btn:hover{
-    background:rgba(255,255,255,0.08);
+    background:rgba(255,255,255,0.1);
+    border-color:rgba(255,255,255,0.6);
 }
 
 
@@ -225,12 +227,7 @@ nav a:hover{
     transform:translateX(-50%);
     width:84%;
 
-    background:
-    linear-gradient(
-        135deg,
-        rgba(26,32,26,0.96),
-        rgba(17,17,17,0.98)
-    );
+    background:linear-gradient(135deg, rgba(15,15,15,0.97), rgba(25,20,15,0.97));
 
     backdrop-filter:blur(24px);
     -webkit-backdrop-filter:blur(24px);
@@ -239,105 +236,102 @@ nav a:hover{
     justify-content:space-between;
     align-items:center;
 
-    padding:34px 42px;
+    padding:32px 40px;
 
     z-index:10;
 
-    border:
-    1px solid rgba(184,144,69,0.16);
+    border:1px solid rgba(184,144,69,0.25);
 
     box-shadow:
-    0 30px 80px rgba(0,0,0,0.32),
-    inset 0 1px 0 rgba(255,255,255,0.03);
+        0 30px 80px rgba(0,0,0,0.4),
+        inset 0 1px 0 rgba(210,171,103,0.08);
 }
 
 .booking-column{
     display:flex;
     flex-direction:column;
-    min-width:180px;
+    min-width:160px;
 }
 
 .booking-label{
-    font-size:10px;
-    letter-spacing:2.5px;
-
-    color:rgba(210,171,103,0.58);
-
-    margin-bottom:12px;
-
+    font-size:9px;
+    letter-spacing:3px;
+    color:#d2ab67;
+    margin-bottom:10px;
     text-transform:uppercase;
-
-    font-weight:500;
+    font-weight:600;
 }
 
 .booking-value{
     color:#f5f2eb;
-
-    font-size:16px;
-
+    font-size:15px;
     font-weight:300;
-
     display:flex;
     align-items:center;
-    justify-content:space-between;
+    gap:10px;
+}
 
-    gap:14px;
+.booking-select,
+.booking-date{
+    background:transparent;
+    border:none;
+    color:#f5f2eb;
+    font-size:14px;
+    font-family:'Inter',sans-serif;
+    font-weight:300;
+    cursor:pointer;
+    width:100%;
+    outline:none;
+}
+
+.booking-select option{
+    background:#1a1410;
+    color:#f5f2eb;
+}
+
+/* White calendar icon */
+input[type="date"]::-webkit-calendar-picker-indicator{
+    filter:invert(1) brightness(0.85) sepia(1) hue-rotate(5deg) saturate(3);
+    cursor:pointer;
+    opacity:0.8;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator:hover{
+    opacity:1;
+}
+
+/* Gold-tinted number spinner */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button{
+    filter:invert(1) brightness(0.85) sepia(1) hue-rotate(5deg) saturate(3);
+    opacity:0.8;
+    cursor:pointer;
 }
 
 .divider{
     width:1px;
-    height:48px;
-
-    background:
-    linear-gradient(
-        to bottom,
-        transparent,
-        rgba(210,171,103,0.22),
-        transparent
-    );
+    height:44px;
+    background:linear-gradient(to bottom, transparent, rgba(210,171,103,0.3), transparent);
+    flex-shrink:0;
 }
 
 .booking-btn{
-    background:
-    linear-gradient(
-        135deg,
-        #b89045,
-        #8f6b2f
-    );
-
+    background:linear-gradient(135deg, #c9a84c, #8f6b2f);
     color:white;
-
-    padding:18px 28px;
-
+    padding:16px 28px;
     font-size:11px;
-
     letter-spacing:2px;
-
     text-transform:uppercase;
-
     flex-shrink:0;
-
-    transition:0.35s;
-
-    border:
-    1px solid rgba(255,255,255,0.08);
-
-    box-shadow:
-    0 10px 30px rgba(184,144,69,0.22);
+    border-radius:3px;
+    border:1px solid rgba(210,171,103,0.2);
+    box-shadow:0 8px 24px rgba(184,144,69,0.3);
 }
 
 .booking-btn:hover{
     transform:translateY(-2px);
-
-    background:
-    linear-gradient(
-        135deg,
-        #c69b4b,
-        #9a7433
-    );
-
-    box-shadow:
-    0 14px 40px rgba(184,144,69,0.32);
+    background:linear-gradient(135deg, #d4b05a, #9a7433);
+    box-shadow:0 14px 36px rgba(184,144,69,0.4);
 }
 
 
@@ -359,10 +353,11 @@ nav a:hover{
 }
 
 .small-title{
-    font-size:12px;
+    font-size:11px;
     letter-spacing:4px;
     color:#b89045;
     margin-bottom:20px;
+    text-transform:uppercase;
 }
 
 .section-right h2{
@@ -373,8 +368,8 @@ nav a:hover{
 }
 
 .section-text{
-    font-size:18px;
-    line-height:1.9;
+    font-size:17px;
+    line-height:1.95;
     color:#555;
     margin-bottom:40px;
 }
@@ -382,14 +377,15 @@ nav a:hover{
 .dark-btn{
     background:#111;
     color:white;
-    padding:18px 34px;
-    font-size:13px;
+    padding:16px 32px;
+    font-size:12px;
     letter-spacing:2px;
     text-transform:uppercase;
+    border-radius:2px;
 }
 
 .dark-btn:hover{
-    background:#333;
+    background:#b89045;
 }
 
 
@@ -407,10 +403,11 @@ nav a:hover{
 }
 
 .properties-header p{
-    font-size:12px;
+    font-size:11px;
     letter-spacing:4px;
     color:#b89045;
     margin-bottom:16px;
+    text-transform:uppercase;
 }
 
 .properties-header h2{
@@ -427,31 +424,45 @@ nav a:hover{
 .property-card{
     background:white;
     overflow:hidden;
-    box-shadow:0 15px 40px rgba(0,0,0,0.06);
+    box-shadow:0 15px 40px rgba(0,0,0,0.07);
     transition:0.4s;
+    text-decoration:none;
+    color:inherit;
+    display:block;
+    cursor:pointer;
 }
 
 .property-card:hover{
-    transform:translateY(-10px);
+    transform:translateY(-8px);
+    box-shadow:0 24px 60px rgba(0,0,0,0.12);
 }
 
 .property-card img{
-    height:430px;
+    height:380px;
     object-fit:cover;
+    transition:0.5s;
+}
+
+.property-card:hover img{
+    transform:scale(1.03);
 }
 
 .property-content{
-    padding:30px;
+    padding:28px 30px;
 }
 
 .property-content h3{
     font-family:'Cormorant Garamond',serif;
-    font-size:34px;
-    margin-bottom:10px;
+    font-size:32px;
+    margin-bottom:8px;
+    color:#111;
 }
 
 .property-content p{
-    color:#777;
+    color:#999;
+    font-size:13px;
+    letter-spacing:1px;
+    text-transform:uppercase;
 }
 
 
@@ -470,10 +481,11 @@ nav a:hover{
 }
 
 .testimonial-header p{
-    font-size:12px;
+    font-size:11px;
     letter-spacing:4px;
     color:#b89045;
     margin-bottom:16px;
+    text-transform:uppercase;
 }
 
 .testimonial-header h2{
@@ -489,26 +501,36 @@ nav a:hover{
 
 .testimonial-card{
     background:white;
-    padding:50px 40px;
-    box-shadow:0 15px 40px rgba(0,0,0,0.06);
+    padding:48px 40px;
+    box-shadow:0 12px 36px rgba(0,0,0,0.05);
+    border-bottom:3px solid transparent;
+    transition:0.3s;
+}
+
+.testimonial-card:hover{
+    border-bottom-color:#d2ab67;
 }
 
 .stars{
     color:#d2ab67;
     margin-bottom:18px;
-    font-size:14px;
+    font-size:15px;
+    letter-spacing:2px;
 }
 
 .review{
-    font-size:18px;
-    line-height:1.9;
+    font-size:17px;
+    line-height:1.95;
     color:#555;
     margin-bottom:28px;
+    font-style:italic;
 }
 
 .testimonial-card h4{
-    font-size:18px;
+    font-size:14px;
     font-weight:500;
+    letter-spacing:1px;
+    color:#333;
 }
 
 
@@ -521,6 +543,7 @@ nav a:hover{
     background-image:url('https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=2200&auto=format&fit=crop');
     background-size:cover;
     background-position:center;
+    background-attachment:fixed;
     display:flex;
     justify-content:center;
     align-items:center;
@@ -530,7 +553,7 @@ nav a:hover{
 .banner-overlay{
     position:absolute;
     inset:0;
-    background:rgba(0,0,0,0.55);
+    background:rgba(0,0,0,0.52);
 }
 
 .banner-content{
@@ -541,9 +564,11 @@ nav a:hover{
 }
 
 .banner-content p{
+    font-size:11px;
     letter-spacing:4px;
     color:#d2ab67;
     margin-bottom:20px;
+    text-transform:uppercase;
 }
 
 .banner-content h2{
@@ -559,7 +584,7 @@ nav a:hover{
 ========================= */
 
 .footer{
-    background:#111;
+    background:#0f0f0f;
     color:white;
     padding:100px 8% 40px;
 }
@@ -576,31 +601,44 @@ nav a:hover{
     font-size:42px;
     letter-spacing:4px;
     margin-bottom:24px;
+    color:#d2ab67;
 }
 
 .footer-brand p{
-    color:rgba(255,255,255,0.7);
+    color:rgba(255,255,255,0.55);
     line-height:1.9;
-    max-width:420px;
+    max-width:380px;
+    font-size:14px;
 }
 
 .footer-links h4{
     margin-bottom:24px;
+    font-size:11px;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    color:#d2ab67;
+    font-weight:500;
 }
 
 .footer-links a,
 .footer-links p{
     display:block;
     text-decoration:none;
-    color:rgba(255,255,255,0.7);
+    color:rgba(255,255,255,0.55);
     margin-bottom:14px;
+    font-size:14px;
+    transition:0.3s;
+}
+
+.footer-links a:hover{
+    color:#d2ab67;
 }
 
 .footer-bottom{
-    border-top:1px solid rgba(255,255,255,0.08);
+    border-top:1px solid rgba(255,255,255,0.07);
     padding-top:30px;
-    color:rgba(255,255,255,0.5);
-    font-size:14px;
+    color:rgba(255,255,255,0.3);
+    font-size:13px;
 }
 
 
@@ -617,7 +655,8 @@ nav a:hover{
     .booking-card{
         flex-direction:column;
         align-items:flex-start;
-        gap:24px;
+        gap:20px;
+        bottom:-120px;
     }
 
     .divider{
@@ -629,7 +668,7 @@ nav a:hover{
     }
 
     .property-grid{
-        grid-template-columns:1fr;
+        grid-template-columns:repeat(3,1fr);
     }
 
     .testimonial-grid{
@@ -649,9 +688,7 @@ nav a:hover{
 
 @media(max-width:768px){
 
-    /* =========================
-       HEADER
-    ========================= */
+    /* HEADER */
 
     .top-bar{
         display:none;
@@ -690,15 +727,12 @@ nav a:hover{
     }
 
 
-    /* =========================
-       HERO
-    ========================= */
+    /* HERO */
 
     .hero{
         height:42vh;
         min-height:380px;
         padding:40px 5% 120px;
-        align-items:center;
     }
 
     .hero-content{
@@ -726,47 +760,27 @@ nav a:hover{
     }
 
     .hero-buttons{
-        display:flex;
-        flex-direction:row;
         gap:8px;
     }
 
     .primary-btn,
     .secondary-btn{
-        width:auto;
         padding:10px 14px;
         font-size:9px;
         letter-spacing:1px;
     }
 
 
-    /* =========================
-       BOOKING BAR
-    ========================= */
+    /* BOOKING BAR */
 
     .booking-card{
         width:94%;
         bottom:-32px;
-
-        padding:16px 14px;
-
-        display:flex;
+        padding:14px 12px;
         flex-direction:row;
         justify-content:space-between;
         align-items:center;
-
-        gap:8px;
-
-        background:
-        linear-gradient(
-            135deg,
-            rgba(26,32,26,0.98),
-            rgba(12,12,12,0.98)
-        );
-
-        border:
-        1px solid rgba(184,144,69,0.14);
-
+        gap:6px;
         overflow:hidden;
     }
 
@@ -776,48 +790,30 @@ nav a:hover{
     }
 
     .booking-label{
-        font-size:7px;
+        font-size:6px;
         letter-spacing:1px;
-        margin-bottom:6px;
-        color:rgba(241, 205, 141, 0.808);
+        margin-bottom:5px;
     }
 
-    .booking-value{
-        font-size:10px;
-        color:#f5f2eb;
-        gap:4px;
+    .booking-select,
+    .booking-date{
+        font-size:9px;
     }
 
     .divider{
         display:block;
         width:1px;
-        height:28px;
-
-        background:
-        linear-gradient(
-            to bottom,
-            transparent,
-            rgba(210,171,103,0.18),
-            transparent
-        );
+        height:24px;
     }
 
     .booking-btn{
-        width:auto;
-
-        padding:12px 10px;
-
-        font-size:8px;
-
+        padding:10px 8px;
+        font-size:7px;
         letter-spacing:1px;
-
-        flex-shrink:0;
     }
 
 
-    /* =========================
-       EXPERIENCE SECTION
-    ========================= */
+    /* EXPERIENCE SECTION */
 
     .luxury-section{
         padding:160px 5% 90px;
@@ -838,9 +834,7 @@ nav a:hover{
     }
 
 
-    /* =========================
-       PROPERTIES
-    ========================= */
+    /* PROPERTIES */
 
     .properties{
         padding:70px 5% 100px;
@@ -854,108 +848,91 @@ nav a:hover{
         font-size:40px;
     }
 
-    .property-grid{
-        grid-template-columns:1fr;
-        gap:24px;
+   .property-grid{
+        grid-template-columns:repeat(3,1fr);
+        gap:10px;
     }
 
     .property-card img{
-        height:280px;
+        height:120px;
     }
 
     .property-content{
-        padding:22px;
+        padding:10px;
     }
 
     .property-content h3{
-        font-size:28px;
+        font-size:14px;
+        margin-bottom:4px;
+    }
+
+    .property-content p{
+        font-size:10px;
     }
 
 
-    /* =========================
-       TESTIMONIALS
-    ========================= */
+    /* TESTIMONIALS */
 
     .testimonials{
-    padding:90px 5%;
-}
+        padding:90px 5%;
+    }
 
-.testimonial-header{
-    margin-bottom:30px;
-}
+    .testimonial-header{
+        margin-bottom:30px;
+    }
 
-.testimonial-header h2{
-    font-size:40px;
-}
+    .testimonial-header h2{
+        font-size:40px;
+    }
 
-.testimonial-grid{
-    display:flex;
-    overflow-x:auto;
-    gap:18px;
+    .testimonial-grid{
+        display:flex;
+        overflow-x:auto;
+        gap:18px;
+        scroll-snap-type:x mandatory;
+        padding-bottom:10px;
+        -ms-overflow-style:none;
+        scrollbar-width:none;
+    }
 
-    scroll-snap-type:x mandatory;
+    .testimonial-grid::-webkit-scrollbar{
+        display:none;
+    }
 
-    padding-bottom:10px;
+    .testimonial-card{
+        width:78%;
+        min-width:78%;
+        min-height:220px;
+        flex-shrink:0;
+        padding:22px 18px;
+        scroll-snap-align:start;
+        display:flex;
+        flex-direction:column;
+        justify-content:space-between;
+    }
 
-    -ms-overflow-style:none;
-    scrollbar-width:none;
-}
+    .review{
+        font-size:15px;
+        line-height:1.75;
+        margin-bottom:16px;
+    }
 
-.testimonial-grid::-webkit-scrollbar{
-    display:none;
-}
+    .testimonial-card h4{
+        font-size:13px;
+    }
 
-.testimonial-card{
-    width:78%;
-
-    min-width:78%;
-
-    min-height:220px;
-
-    flex-shrink:0;
-
-    padding:22px 18px;
-
-    scroll-snap-align:start;
-
-    background:white;
-
-    display:flex;
-    flex-direction:column;
-    justify-content:space-between;
-
-    box-shadow:
-    0 8px 24px rgba(0,0,0,0.05);
-}
-
-.review{
-    font-size:18px;
-    line-height:1.7;
-    margin-bottom:18px;
-    color:#555;
-}
-
-.testimonial-card h4{
-    font-size:16px;
-    font-weight:500;
-    color:#222;
-}
-.stars{
-    color:#966e28;
-    margin-bottom:18px;
-    font-size:16px;
-}
+    .stars{
+        font-size:14px;
+    }
 
 
-
-    /* =========================
-       BANNER
-    ========================= */
+    /* BANNER */
 
     .luxury-banner{
         height:42vh;
         min-height:300px;
         padding:0 5%;
+        background-attachment:scroll;
     }
 
     .banner-content h2{
@@ -963,9 +940,7 @@ nav a:hover{
     }
 
 
-    /* =========================
-       FOOTER
-    ========================= */
+    /* FOOTER */
 
     .footer{
         padding:70px 5% 40px;
@@ -976,32 +951,4 @@ nav a:hover{
         gap:40px;
     }
 
-}
-/* =========================
-   PROPERTY CARD LINK FIX
-   Add this to the bottom of style.css
-========================= */
-
-.property-card {
-    text-decoration: none;
-    color: inherit;
-    display: block;
-    cursor: pointer;
-}
-
-/* 6-card grid — 3 columns, 2 rows */
-.property-grid {
-    grid-template-columns: repeat(3, 1fr);
-}
-
-@media(max-width:1100px) {
-    .property-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media(max-width:768px) {
-    .property-grid {
-        grid-template-columns: 1fr;
-    }
 }
