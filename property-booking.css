@@ -167,3 +167,61 @@
         width:100%;
     }
 }
+
+
+/* =========================
+   MOBILE FIX: PROPERTY PAGES (sizes, spacing, alignment)
+========================= */
+@media(max-width:768px){
+
+    html,body{ overflow-x:hidden; }
+
+    .rooms-grid,.activities-grid,.nearby-grid,.gallery-strip,.overview{
+        min-width:0;
+    }
+    .rooms-grid > *,.activities-grid > *,.nearby-grid > *,.gallery-strip > *,.overview > *{
+        min-width:0;
+    }
+
+    .property-hero{
+        height:auto;
+        min-height:0;
+        padding:150px 5% 40px;
+    }
+
+    .property-hero-content h1{
+        font-size:36px;
+        letter-spacing:0;
+        line-height:1.1;
+    }
+
+    .overview{ padding:50px 5%; gap:28px; }
+    .overview-left h2{ font-size:30px; }
+    .overview-right img{ height:240px; }
+
+    .gallery-strip{
+        grid-template-columns:1fr 1fr;
+        gap:8px;
+        padding:0 5% 40px;
+    }
+    .gallery-strip img{ height:130px; }
+    .gallery-strip img:first-child{ grid-column:1/-1; height:200px; }
+
+    .rooms-section,
+    .activities-section,
+    .nearby-section{ padding:50px 5%; }
+
+    .section-header{ margin-bottom:28px; }
+    .section-header h2{ font-size:30px; }
+
+    .room-card img{ height:190px; }
+
+    .activities-grid{
+        grid-template-columns:1fr;
+        gap:12px;
+    }
+    .activity-card{ padding:20px; }
+
+    .nearby-grid{ gap:14px; }
+    .nearby-card img{ height:220px; }
+}
