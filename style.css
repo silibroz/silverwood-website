@@ -1029,3 +1029,10 @@ nav a:hover{ color:#c27935; }
 .mobile-menu{ color:#fff; }
 .nav-btn{ background:#c27935; }
 .nav-btn:hover{ background:#d98a45; }
+
+/* BIGGER LOGO */
+.logo img{ height:84px; }
+
+@media(max-width:768px){
+    .logo img{ height:60px; }
+}
