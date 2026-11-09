@@ -1,0 +1,169 @@
+/* =========================
+   BOOKING WIDGET: GUESTS + MEAL PLAN + MOBILE
+   Paste at the very bottom of property.css
+========================= */
+
+.booking-widget-left{
+    flex-wrap:wrap;
+    gap:18px 28px;
+}
+
+.widget-select{
+    background:transparent;
+    border:none;
+    border-bottom:1px solid rgba(255,255,255,0.15);
+    color:#f5f2eb;
+    font-size:14px;
+    font-family:'Inter',sans-serif;
+    padding:6px 0;
+    width:170px;
+    cursor:pointer;
+    text-overflow:ellipsis;
+}
+
+.widget-select:focus{
+    outline:none;
+    border-bottom-color:#c27935;
+}
+
+.widget-select option{
+    background:#111;
+    color:#fff;
+}
+
+/* Guests picker */
+.pax-wrap{
+    position:relative;
+}
+
+.pax-toggle{
+    background:transparent;
+    border:none;
+    border-bottom:1px solid rgba(255,255,255,0.15);
+    color:#f5f2eb;
+    font-family:'Inter',sans-serif;
+    font-size:14px;
+    font-weight:300;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:8px;
+    width:150px;
+    padding:6px 0;
+    cursor:pointer;
+    text-align:left;
+    white-space:nowrap;
+}
+
+.pax-arrow{
+    color:#c27935;
+}
+
+.pax-panel{
+    display:none;
+    position:absolute;
+    left:0;
+    top:calc(100% + 16px);
+    min-width:240px;
+    background:#111;
+    border:1px solid rgba(194,121,53,0.5);
+    padding:14px 16px 16px;
+    z-index:200;
+    box-shadow:0 20px 50px rgba(0,0,0,0.5);
+}
+
+.pax-panel.up{
+    top:auto;
+    bottom:calc(100% + 18px);
+}
+
+.pax-panel.open{
+    display:block;
+}
+
+.pax-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    color:#fff;
+    font-size:14px;
+    padding:8px 0;
+}
+
+.pax-ctrl{
+    display:flex;
+    align-items:center;
+    gap:14px;
+}
+
+.pax-ctrl button{
+    width:32px;
+    height:32px;
+    border-radius:50%;
+    border:1px solid rgba(255,255,255,0.35);
+    background:transparent;
+    color:#fff;
+    font-size:18px;
+    line-height:1;
+}
+
+.pax-ctrl button:hover{
+    border-color:#c27935;
+    color:#c27935;
+}
+
+.pax-ctrl span{
+    min-width:18px;
+    text-align:center;
+}
+
+.pax-done{
+    width:100%;
+    margin-top:10px;
+    padding:11px;
+    background:#c27935;
+    color:#fff;
+    font-size:11px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    border-radius:3px;
+}
+
+/* Mobile: widget is no longer sticky, fields in a 2-column grid */
+@media(max-width:768px){
+
+    .booking-widget{
+        position:static;
+        padding:22px 5%;
+    }
+
+    .booking-widget-left{
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        gap:18px 16px;
+    }
+
+    .booking-widget-left .widget-field{
+        min-width:0;
+    }
+
+    .booking-widget-left .widget-field:first-child{
+        grid-column:1 / -1;
+    }
+
+    .widget-input,
+    .widget-select,
+    .pax-toggle{
+        width:100%;
+        font-size:14px;
+    }
+
+    .pax-panel.up{
+        top:calc(100% + 10px);
+        bottom:auto;
+    }
+
+    .whatsapp-btn{
+        width:100%;
+    }
+}
