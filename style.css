@@ -1019,3 +1019,13 @@ input[type="number"]::-webkit-outer-spin-button{ filter:invert(1); opacity:0.85;
     .property-content h3{ font-size:14px; line-height:1.2; margin-bottom:4px; }
     .property-content p{ font-size:8px; letter-spacing:0.5px; }
 }
+
+/* BLACK HEADER */
+.main-header,
+.navbar{ background:#000; }
+.navbar{ border-bottom:1px solid rgba(255,255,255,0.1); }
+nav a{ color:#fff; }
+nav a:hover{ color:#c27935; }
+.mobile-menu{ color:#fff; }
+.nav-btn{ background:#c27935; }
+.nav-btn:hover{ background:#d98a45; }
