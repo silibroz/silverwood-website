@@ -1040,3 +1040,187 @@ input[type="number"]::-webkit-outer-spin-button{ filter:invert(1); opacity:1; }
 .footer-links h4{ color:#c27935; }
 .footer-links a:hover{ color:#c27935; }
 .footer-bottom{ border-top:1px solid rgba(255,255,255,0.12); }
+
+/* =========================
+   BOOKING BAR: GUESTS + MEAL PLAN + MOBILE
+   Paste at the very bottom of style.css
+========================= */
+
+/* Desktop: fit 5 fields + button */
+.booking-card{
+    gap:18px;
+}
+
+.booking-column{
+    flex:1;
+    min-width:0;
+}
+
+.booking-select{
+    text-overflow:ellipsis;
+}
+
+/* Guests picker */
+.pax-wrap{
+    position:relative;
+}
+
+.pax-toggle{
+    background:transparent;
+    border:none;
+    color:#f5f2eb;
+    font-family:'Inter',sans-serif;
+    font-size:14px;
+    font-weight:300;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:8px;
+    width:100%;
+    padding:0;
+    cursor:pointer;
+    text-align:left;
+    white-space:nowrap;
+}
+
+.pax-arrow{
+    color:#c27935;
+}
+
+.pax-panel{
+    display:none;
+    position:absolute;
+    left:0;
+    top:calc(100% + 16px);
+    min-width:240px;
+    background:#111;
+    border:1px solid rgba(194,121,53,0.5);
+    padding:14px 16px 16px;
+    z-index:50;
+    box-shadow:0 20px 50px rgba(0,0,0,0.5);
+}
+
+.pax-panel.open{
+    display:block;
+}
+
+.pax-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    color:#fff;
+    font-size:14px;
+    padding:8px 0;
+}
+
+.pax-ctrl{
+    display:flex;
+    align-items:center;
+    gap:14px;
+}
+
+.pax-ctrl button{
+    width:32px;
+    height:32px;
+    border-radius:50%;
+    border:1px solid rgba(255,255,255,0.35);
+    background:transparent;
+    color:#fff;
+    font-size:18px;
+    line-height:1;
+}
+
+.pax-ctrl button:hover{
+    border-color:#c27935;
+    color:#c27935;
+}
+
+.pax-ctrl span{
+    min-width:18px;
+    text-align:center;
+}
+
+.pax-done{
+    width:100%;
+    margin-top:10px;
+    padding:11px;
+    background:#c27935;
+    color:#fff;
+    font-size:11px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    border-radius:3px;
+}
+
+/* Tablet and mobile: bar sits inside the hero as a grid */
+@media(max-width:1100px){
+
+    .hero{
+        height:auto;
+        min-height:0;
+        padding:50px 5% 30px;
+    }
+
+    .booking-card{
+        position:relative;
+        left:auto;
+        bottom:auto;
+        transform:none;
+        width:100%;
+        margin-top:36px;
+        display:grid;
+        grid-template-columns:repeat(3,1fr);
+        gap:18px 16px;
+        align-items:start;
+        padding:22px;
+        overflow:visible;
+    }
+
+    .booking-card .divider{
+        display:none;
+    }
+
+    .booking-card .booking-column:first-child{
+        grid-column:1 / -1;
+    }
+
+    .booking-btn{
+        grid-column:1 / -1;
+        width:100%;
+        padding:16px;
+        font-size:12px;
+    }
+
+    .luxury-section{
+        padding-top:80px;
+    }
+}
+
+@media(max-width:768px){
+
+    .booking-card{
+        grid-template-columns:1fr 1fr;
+        padding:18px 16px;
+    }
+
+    .booking-label{
+        font-size:9px;
+        letter-spacing:1.5px;
+        margin-bottom:6px;
+    }
+
+    .booking-select,
+    .booking-date,
+    .pax-toggle{
+        font-size:14px;
+    }
+
+    .pax-panel{
+        min-width:220px;
+    }
+
+    .booking-btn{
+        font-size:11px;
+        letter-spacing:2px;
+    }
+}
