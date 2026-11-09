@@ -952,3 +952,91 @@ input[type="number"]::-webkit-outer-spin-button{
     }
 
 }
+/* =========================
+   BLACK THEME (orange accent)
+   Delete this whole block to undo
+========================= */
+
+body{ background:#000; color:#f2f2f2; }
+
+/* Header */
+.main-header,
+.navbar{ background:#000; }
+.navbar{ border-bottom:1px solid rgba(255,255,255,0.12); }
+nav a{ color:#fff; }
+nav a:hover{ color:#c27935; }
+.mobile-menu{ color:#fff; }
+.nav-btn{ background:#c27935; color:#fff; }
+.nav-btn:hover{ background:#d98a45; }
+
+/* Hero */
+.subheading{ color:#c27935; }
+.primary-btn{ background:#c27935; }
+.primary-btn:hover{ background:#d98a45; }
+
+/* Booking bar */
+.booking-card{
+    background:#000;
+    border:1px solid rgba(194,121,53,0.5);
+    box-shadow:0 30px 80px rgba(0,0,0,0.6);
+}
+.booking-label{ color:#c27935; }
+.booking-select option{ background:#000; color:#fff; }
+.divider{ background:linear-gradient(to bottom, transparent, rgba(194,121,53,0.5), transparent); }
+.booking-btn{
+    background:#c27935;
+    border:none;
+    box-shadow:0 8px 24px rgba(194,121,53,0.35);
+}
+.booking-btn:hover{
+    background:#d98a45;
+    box-shadow:0 14px 36px rgba(194,121,53,0.45);
+}
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button{ filter:invert(1); opacity:1; }
+
+/* Small orange headings */
+.small-title,
+.properties-header p,
+.testimonial-header p,
+.banner-content p{ color:#c27935; }
+
+/* White headings and text */
+.section-right h2,
+.properties-header h2,
+.testimonial-header h2{ color:#fff; }
+.section-text{ color:rgba(255,255,255,0.7); }
+
+/* Dark button */
+.dark-btn{ background:#c27935; color:#fff; }
+.dark-btn:hover{ background:#d98a45; }
+
+/* Property cards */
+.property-card{
+    background:#000;
+    border:1px solid rgba(255,255,255,0.12);
+    box-shadow:none;
+}
+.property-card:hover{ border-color:#c27935; box-shadow:none; }
+.property-content h3{ color:#fff; }
+.property-content p{ color:rgba(255,255,255,0.6); }
+
+/* Testimonials */
+.testimonials{ background:#000; }
+.testimonial-card{
+    background:#000;
+    border:1px solid rgba(255,255,255,0.12);
+    box-shadow:none;
+}
+.testimonial-card:hover{ border-bottom-color:#c27935; }
+.stars{ color:#c27935; }
+.review{ color:rgba(255,255,255,0.75); }
+.testimonial-card h4{ color:#fff; }
+
+/* Footer */
+.footer{ background:#000; border-top:1px solid rgba(255,255,255,0.12); }
+.footer-brand h2,
+.footer-links h4{ color:#c27935; }
+.footer-links a:hover{ color:#c27935; }
+.footer-bottom{ border-top:1px solid rgba(255,255,255,0.12); }
