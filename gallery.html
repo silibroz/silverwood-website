@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Silverwood Gallery</title>
+    <link rel="stylesheet" href="style.css?v=6">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        .gallery-hero{
+            background:#000;
+            text-align:center;
+            padding:100px 8% 50px;
+        }
+        .gallery-hero h1{
+            font-family:'Cormorant Garamond',serif;
+            font-size:72px;
+            line-height:1;
+            color:#fff;
+            font-weight:600;
+            margin-top:16px;
+        }
+        .gallery-wrap{
+            background:#000;
+            padding:20px 5% 100px;
+            min-height:50vh;
+        }
+        .gallery-grid{
+            max-width:1300px;
+            margin:0 auto;
+            columns:3 320px;
+            column-gap:14px;
+        }
+        .g-item{
+            break-inside:avoid;
+            margin-bottom:14px;
+            border-radius:14px;
+            overflow:hidden;
+            background:#111;
+            cursor:pointer;
+            position:relative;
+        }
+        .g-item img,
+        .g-item video{
+            width:100%;
+            display:block;
+            transition:transform .4s;
+        }
+        .g-item:hover img{ transform:scale(1.03); }
+        .g-item video{ cursor:default; }
+        .gallery-msg{
+            text-align:center;
+            color:rgba(255,255,255,0.6);
+            font-size:16px;
+            padding:60px 0;
+        }
+
+        /* Full-screen viewer */
+        .lightbox{
+            position:fixed; inset:0; background:rgba(0,0,0,0.95);
+            display:none; align-items:center; justify-content:center; z-index:5000;
+        }
+        .lightbox.open{ display:flex; }
+        .lightbox img{
+            max-width:92vw; max-height:88vh; width:auto; border-radius:8px;
+        }
+        .lb-btn{
+            position:absolute; background:rgba(255,255,255,0.12); color:#fff;
+            width:46px; height:46px; border-radius:50%; font-size:22px;
+            display:flex; align-items:center; justify-content:center;
+        }
+        .lb-btn:hover{ background:#c27935; }
+        .lb-close{ top:18px; right:18px; }
+        .lb-prev{ left:14px; top:50%; transform:translateY(-50%); }
+        .lb-next{ right:14px; top:50%; transform:translateY(-50%); }
+
+        @media(max-width:768px){
+            .gallery-hero{ padding:60px 5% 30px; }
+            .gallery-hero h1{ font-size:44px; }
+            .gallery-grid{ columns:2 140px; column-gap:8px; }
+            .g-item{ margin-bottom:8px; border-radius:10px; }
+            .gallery-wrap{ padding:10px 3% 70px; }
+            .lb-prev,.lb-next{ width:38px; height:38px; }
+        }
+
+        .wa-float{
+            position:fixed; right:18px; bottom:18px; width:56px; height:56px;
+            border-radius:50%; background:#25d366; display:flex;
+            align-items:center; justify-content:center;
+            box-shadow:0 8px 24px rgba(0,0,0,0.4); z-index:2000; transition:transform .2s;
+        }
+        .wa-float:hover{ transform:scale(1.08); }
+    </style>
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="top-bar">
+            <div class="top-left">+91 76798 92404</div>
+            <div class="top-right">info.silverwoodhotels@gmail.com</div>
+        </div>
+        <div class="navbar">
+            <div class="mobile-menu">☰</div>
+            <div class="logo"><a href="index.html"><img src="logo.png" alt="Silverwood Logo"></a></div>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="index.html#properties">Properties</a>
+                <a href="about.html">About Us</a>
+                <a href="#">Experiences</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="#">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="gallery-hero">
+        <p class="small-title">OUR MOMENTS</p>
+        <h1>Gallery</h1>
+    </section>
+
+    <section class="gallery-wrap">
+        <div class="gallery-grid" id="galleryGrid"></div>
+        <p class="gallery-msg" id="galleryMsg">Loading...</p>
+    </section>
+
+    <div class="lightbox" id="lightbox">
+        <button class="lb-btn lb-close" id="lbClose" aria-label="Close">✕</button>
+        <button class="lb-btn lb-prev" id="lbPrev" aria-label="Previous">‹</button>
+        <img id="lbImg" alt="">
+        <button class="lb-btn lb-next" id="lbNext" aria-label="Next">›</button>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <h2>SILVERWOOD</h2>
+                <p>Quality and Affordability across Sikkim.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <a href="index.html">Home</a>
+                <a href="index.html#properties">Properties</a>
+                <a href="about.html">About Us</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="#">Contact</a>
+            </div>
+            <div class="footer-links">
+                <h4>Contact</h4>
+                <p>info.silverwoodhotels@gmail.com</p>
+                <p>+91 76798 92404</p>
+            </div>
+        </div>
+        <div class="footer-bottom">© 2026 Silverwood Hotels. All rights reserved.</div>
+    </footer>
+
+    <a href="https://wa.me/917679892404?text=Hi%20Silverwood%20Hotels!%20I%20have%20an%20enquiry." class="wa-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+        <svg viewBox="0 0 32 32" width="30" height="30" fill="#fff">
+            <path d="M16 3C9 3 3.4 8.6 3.4 15.5c0 2.3.6 4.4 1.7 6.3L3 29l7.4-2c1.8 1 3.800 1.500 5.600 1.500 7 0 12.600-5.600 12.600-12.500S23 3 16 3zm0 22.800c-1.800 0-3.500-.5-5-1.400l-.4-.2-4.400 1.200 1.200-4.300-.3-.4a10.300 10.300 0 0 1-1.600-5.500C5.500 9.800 10.200 5.200 16 5.200s10.500 4.600 10.500 10.300S21.800 25.800 16 25.800zm5.700-7.700c-.3-.2-1.900-.9-2.200-1-.3-.1-.5-.2-.7.200-.2.300-.8 1-.9 1.200-.2.200-.3.200-.6.100-.3-.2-1.300-.5-2.500-1.500-.9-.8-1.500-1.800-1.700-2.100-.2-.3 0-.5.100-.6l.5-.5c.1-.2.200-.3.300-.5.100-.2 0-.4 0-.5l-1-2.300c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.100-.8.400-.3.300-1.100 1.100-1.100 2.600s1.100 3 1.300 3.200c.2.200 2.200 3.400 5.300 4.700.7.300 1.300.5 1.700.6.700.2 1.400.2 1.900.1.600-.1 1.900-.8 2.100-1.500.3-.7.3-1.400.2-1.500-.1-.1-.3-.2-.6-.4z"/>
+        </svg>
+    </a>
+
+<script>
+/* =====================================================
+   GALLERY: shows every photo and video in the "gallery" folder.
+   Photos: jpg, jpeg, png, webp, gif    Videos: mp4, webm, mov
+   ===================================================== */
+(function () {
+    var OWNER = 'silibroz';
+    var REPO  = 'silverwood-website';
+    var FOLDER = 'gallery';
+
+    var IMG = /\.(jpe?g|png|webp|gif)$/i;
+    var VID = /\.(mp4|webm|mov)$/i;
+
+    var grid = document.getElementById('galleryGrid');
+    var msg  = document.getElementById('galleryMsg');
+    var photos = [];
+
+    function toItems(names) {
+        return names.filter(function (n) { return IMG.test(n) || VID.test(n); })
+                    .sort(function (a, b) { return a.localeCompare(b, undefined, {numeric:true}); });
+    }
+
+    function show(names) {
+        var items = toItems(names);
+        if (!items.length) { msg.textContent = 'Photos and videos coming soon.'; return; }
+        msg.style.display = 'none';
+        items.forEach(function (name) {
+            var src = FOLDER + '/' + encodeURIComponent(name);
+            var box = document.createElement('div');
+            box.className = 'g-item';
+            if (VID.test(name)) {
+                var v = document.createElement('video');
+                v.src = src; v.controls = true; v.preload = 'metadata'; v.playsInline = true;
+                box.appendChild(v);
+            } else {
+                var img = document.createElement('img');
+                img.src = src; img.alt = 'Silverwood gallery photo'; img.loading = 'lazy';
+                var idx = photos.length;
+                photos.push(src);
+                box.addEventListener('click', function () { openLb(idx); });
+                box.appendChild(img);
+            }
+            grid.appendChild(box);
+        });
+    }
+
+    function load() {
+        /* 1) optional list file, 2) the GitHub folder listing */
+        fetch(FOLDER + '/gallery.json').then(function (r) {
+            if (!r.ok) throw new Error('no json');
+            return r.json();
+        }).then(show).catch(function () {
+            fetch('https://api.github.com/repos/' + OWNER + '/' + REPO + '/contents/' + FOLDER)
+                .then(function (r) { if (!r.ok) throw new Error('api'); return r.json(); })
+                .then(function (list) { show(list.map(function (f) { return f.name; })); })
+                .catch(function () { msg.textContent = 'Photos and videos coming soon.'; });
+        });
+    }
+
+    /* Full-screen viewer */
+    var lb = document.getElementById('lightbox');
+    var lbImg = document.getElementById('lbImg');
+    var cur = 0;
+    function openLb(i) { cur = i; lbImg.src = photos[cur]; lb.classList.add('open'); }
+    function closeLb() { lb.classList.remove('open'); }
+    function step(d) { cur = (cur + d + photos.length) % photos.length; lbImg.src = photos[cur]; }
+
+    document.getElementById('lbClose').onclick = closeLb;
+    document.getElementById('lbPrev').onclick = function () { step(-1); };
+    document.getElementById('lbNext').onclick = function () { step(1); };
+    lb.addEventListener('click', function (e) { if (e.target === lb) closeLb(); });
+    document.addEventListener('keydown', function (e) {
+        if (!lb.classList.contains('open')) return;
+        if (e.key === 'Escape') closeLb();
+        if (e.key === 'ArrowLeft') step(-1);
+        if (e.key === 'ArrowRight') step(1);
+    });
+    var sx = null;
+    lb.addEventListener('touchstart', function (e) { sx = e.touches[0].clientX; });
+    lb.addEventListener('touchend', function (e) {
+        if (sx === null) return;
+        var dx = e.changedTouches[0].clientX - sx;
+        if (Math.abs(dx) > 50) step(dx < 0 ? 1 : -1);
+        sx = null;
+    });
+
+    load();
+})();
+</script>
+<script src="menu.js"></script>
+</body>
+</html>
