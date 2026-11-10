@@ -1036,3 +1036,4 @@ nav a:hover{ color:#c27935; }
 @media(max-width:768px){
     .logo img{ height:60px; }
 }
+.nav-btn{ display:none !important; }
