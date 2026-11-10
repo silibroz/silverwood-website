@@ -225,3 +225,4 @@
     .nearby-grid{ gap:14px; }
     .nearby-card img{ height:220px; }
 }
+.nav-btn{ display:none !important; }
