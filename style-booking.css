@@ -212,3 +212,39 @@
         grid-column:1 / -1;
     }
 }
+/* DESKTOP ONLY: white booking bar, rounded, black text and icons */
+@media(min-width:1101px){
+
+    .booking-card{
+        background:#fff;
+        border:none;
+        border-radius:18px;
+        box-shadow:0 20px 60px rgba(0,0,0,0.35);
+    }
+
+    .booking-card .booking-select,
+    .booking-card .booking-date,
+    .booking-card .pax-toggle{
+        color:#111;
+    }
+
+    .booking-card .booking-select option{
+        background:#fff;
+        color:#111;
+    }
+
+    .booking-card input[type="date"]::-webkit-calendar-picker-indicator{
+        filter:none;
+        opacity:0.8;
+    }
+
+    .booking-card .pax-arrow{ color:#111; }
+
+    .booking-card .divider{
+        background:linear-gradient(to bottom, transparent, rgba(0,0,0,0.2), transparent);
+    }
+
+    .booking-card .booking-btn{
+        border-radius:10px;
+    }
+}
