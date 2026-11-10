@@ -19,6 +19,7 @@
     width:170px;
     cursor:pointer;
     text-overflow:ellipsis;
+    color-scheme:dark;
 }
 
 .widget-select:focus{
@@ -56,7 +57,7 @@
 }
 
 .pax-arrow{
-    color:#c27935;
+    color:#fff;
 }
 
 .pax-panel{
@@ -225,4 +226,68 @@
     .nearby-grid{ gap:14px; }
     .nearby-card img{ height:220px; }
 }
+
+
+/* =========================
+   BLACK THEME: PROPERTY PAGES (matches homepage)
+========================= */
+
+body{ background:#000; color:#e8e8e8; }
+
+.overview,
+.rooms-section,
+.activities-section,
+.nearby-section,
+.gallery-strip{ background:#000; }
+
+.overview-left h2,
+.section-header h2,
+.room-info h3,
+.activity-card h4{ color:#fff; }
+
+.overview-left p,
+.room-info p,
+.activity-card p{ color:rgba(255,255,255,0.65); }
+
+.overview-left .small-title,
+.section-header .small-title,
+.room-info .room-price{ color:#c27935; }
+
+/* pure black cards */
+.room-card,
+.activity-card{
+    background:#000;
+    border:1px solid rgba(255,255,255,0.1);
+    box-shadow:none;
+}
+.room-card:hover,
+.activity-card:hover{ border-color:#c27935; box-shadow:0 20px 50px rgba(0,0,0,0.6); }
+.room-card.selected{ border-color:#c27935; }
+
+.room-feature{
+    background:rgba(255,255,255,0.08);
+    color:rgba(255,255,255,0.8);
+}
+
+.select-room-btn{ background:#c27935; color:#fff; }
+.select-room-btn:hover{ background:#d98a45; }
+.room-card.selected .select-room-btn{ background:#d98a45; }
+
+/* orange accents */
+.property-tag,
+.nearby-distance,
+.widget-selected-room{ color:#fff; }
+.info-label,
+.widget-label{ color:#fff; }
+
+.info-bar{ background:#000; border-top:1px solid rgba(255,255,255,0.08); }
+.booking-widget{ background:#0a0a0a; border-top:1px solid rgba(194,121,53,0.35); }
+.footer{ background:#000; border-top:1px solid rgba(255,255,255,0.08); }
+
+.pax-panel{ background:#0a0a0a; }
+
+/* header stays white: keep the hamburger dark; calendar icons white */
+.mobile-menu{ color:#111; }
+input[type="date"]::-webkit-calendar-picker-indicator{ filter:invert(1); opacity:1; cursor:pointer; }
+
 .nav-btn{ display:none !important; }
