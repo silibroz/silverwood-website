@@ -5,7 +5,7 @@
         APAI: 'APAI (Breakfast, Lunch & Dinner)',
         MAPAI: 'MAPAI (Breakfast & Dinner)',
         CPAI: 'CPAI (Breakfast only)',
-        EPAI: 'EPAI (Room only)'
+        EPAI: 'EPAI (No meal)'
     };
 
     function pad(n) { return n < 10 ? '0' + n : '' + n; }
@@ -86,8 +86,10 @@
                 lines.push('🏨 *Property:* ' + sel.value);
             } else {
                 lines.push("Hi Silverwood Hotels! I'd like to book a stay at *" + opts.property + '*.', '');
-                var room = roomLabel ? roomLabel.textContent : '';
-                lines.push('🏨 *Room:* ' + (room && room !== 'No room selected' ? room : 'Not selected'));
+                if (roomLabel) {
+                    var room = roomLabel.textContent;
+                    lines.push('🏨 *Room:* ' + (room && room !== 'No room selected' ? room : 'Not selected'));
+                }
             }
             lines.push('📅 *Check-in:* ' + (ci.value || 'TBD'));
             lines.push('📅 *Check-out:* ' + (co.value || 'TBD'));
