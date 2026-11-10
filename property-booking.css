@@ -148,10 +148,6 @@
         min-width:0;
     }
 
-    .booking-widget-left .widget-field:first-child{
-        grid-column:1 / -1;
-    }
-
     .widget-input,
     .widget-select,
     .pax-toggle{
