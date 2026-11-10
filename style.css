@@ -348,8 +348,7 @@ input[type="number"]::-webkit-outer-spin-button{
 }
 
 .section-left img{
-    height:720px;
-    object-fit:cover;
+    height:auto;
 }
 
 .small-title{
@@ -821,8 +820,8 @@ input[type="number"]::-webkit-outer-spin-button{
     }
 
     .section-left img{
-        height:340px;
-    }
+    height:auto;
+}
 
     .section-right h2{
         font-size:40px;
