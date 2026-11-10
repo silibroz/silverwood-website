@@ -134,7 +134,7 @@ nav a:hover{
     min-height:560px;
     padding:60px 5% 140px;
     align-items:center;
-    background-image:url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=2400&auto=format&fit=crop');
+    background-image:url('hero.png');
     background-size:cover;
     background-position:center;
 }
