@@ -1037,3 +1037,17 @@ nav a:hover{ color:#c27935; }
     .logo img{ height:60px; }
 }
 .nav-btn{ display:none !important; }
+
+/* ROUNDED CARDS */
+.property-card,
+.testimonial-card{
+    border-radius:18px;
+    overflow:hidden;
+}
+
+@media(max-width:768px){
+    .property-card,
+    .testimonial-card{
+        border-radius:12px;
+    }
+}
