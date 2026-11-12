@@ -1,111 +1,57 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Silverwood Hotels</title>
-
     <link rel="stylesheet" href="style.css?v=4">
     <link rel="stylesheet" href="style-booking.css?v=2">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
-
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-
 </head>
-
 <body>
 
-    <!-- =========================
-         HEADER
-    ========================== -->
-
+    <!-- HEADER -->
     <header class="main-header">
-
         <div class="top-bar">
-
-            <div class="top-left">
-                +91 76798 92404
-            </div>
-
-            <div class="top-right">
-                info@silverwoodhotels.com
-            </div>
-
+            <div class="top-left">+91 76798 92404</div>
+            <div class="top-right">info@silverwoodhotels.com</div>
         </div>
 
         <div class="navbar">
-
-            <div class="mobile-menu">
-                ☰
-            </div>
-
+            <div class="mobile-menu">☰</div>
             <div class="logo">
                 <a href="index.html"><img src="logo.png" alt="Silverwood Logo"></a>
             </div>
-
             <nav>
-             <a href="index.html">Home</a>
-             <a href="#properties">Properties</a>
-             <a href="about.html">About Us</a>
-             <a href="gallery.html">Gallery</a>
-             <a href="contact.html">Contact</a>
+                <a href="index.html">Home</a>
+                <a href="#properties">Properties</a>
+                <a href="about.html">About Us</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="contact.html">Contact</a>
             </nav>
-
-           
-
         </div>
-
     </header>
 
-
-    <!-- =========================
-         HERO
-    ========================== -->
-
+    <!-- HERO -->
     <section class="hero">
-
         <div class="hero-overlay"></div>
-
         <div class="hero-content">
-
-            <p class="subheading">
-                LUXURY • NATURE • SERENITY
-            </p>
-
-            <h1>
-                Quality and Affordability
-            </h1>
-
+            <p class="subheading">LUXURY • NATURE • SERENITY</p>
+            <h1>Quality and Affordability</h1>
             <p class="hero-description">
-
                 Discover curated stays crafted for comfort,
                 tranquility, and unforgettable experiences.
-
             </p>
-
             <div class="hero-buttons">
-
-                                <a href="#properties"><button class="primary-btn">
-                    Explore Properties
-                </button></a>
-
-                <a href="gallery.html"><button class="secondary-btn">
-                  View Gallery
-                </button></a>
-
+                <a href="#properties"><button class="primary-btn">Explore Properties</button></a>
+                <a href="gallery.html"><button class="secondary-btn">View Gallery</button></a>
             </div>
-
         </div>
 
-
         <!-- BOOKING BAR -->
-
         <div class="booking-card">
-
             <div class="booking-column">
                 <span class="booking-label">DESTINATION</span>
                 <select class="booking-select" id="bookingProperty">
@@ -137,10 +83,26 @@
             <div class="booking-column">
                 <span class="booking-label">GUESTS</span>
                 <div class="pax-wrap">
-                    <button type="button" class="pax-toggle" id="paxToggle"><span id="paxLabel">2 Adults</span><span class="pax-arrow">⌄</span></button>
+                    <button type="button" class="pax-toggle" id="paxToggle">
+                        <span id="paxLabel">2 Adults</span><span class="pax-arrow">⌄</span>
+                    </button>
                     <div class="pax-panel" id="paxPanel">
-                        <div class="pax-row"><span>Adults</span><div class="pax-ctrl"><button type="button" data-pax="adults" data-dir="-1">−</button><span id="adultsVal">2</span><button type="button" data-pax="adults" data-dir="1">+</button></div></div>
-                        <div class="pax-row"><span>Children</span><div class="pax-ctrl"><button type="button" data-pax="children" data-dir="-1">−</button><span id="childrenVal">0</span><button type="button" data-pax="children" data-dir="1">+</button></div></div>
+                        <div class="pax-row">
+                            <span>Adults</span>
+                            <div class="pax-ctrl">
+                                <button type="button" data-pax="adults" data-dir="-1">−</button>
+                                <span id="adultsVal">2</span>
+                                <button type="button" data-pax="adults" data-dir="1">+</button>
+                            </div>
+                        </div>
+                        <div class="pax-row">
+                            <span>Children</span>
+                            <div class="pax-ctrl">
+                                <button type="button" data-pax="children" data-dir="-1">−</button>
+                                <span id="childrenVal">0</span>
+                                <button type="button" data-pax="children" data-dir="1">+</button>
+                            </div>
+                        </div>
                         <button type="button" class="pax-done" id="paxDone">Done</button>
                     </div>
                 </div>
@@ -159,75 +121,35 @@
                 </select>
             </div>
 
-            <button class="booking-btn" onclick="bookOnWhatsApp()">
-                Book Stay
-            </button>
-
+            <button class="booking-btn" onclick="bookOnWhatsApp()">Book Stay</button>
         </div>
-
     </section>
 
-
-    <!-- =========================
-         EXPERIENCE SECTION
-    ========================== -->
-
+    <!-- EXPERIENCE SECTION -->
     <section class="luxury-section">
-
         <div class="section-left">
-
             <img src="hospitality.png" alt="Silverwood Hospitality">
-
         </div>
-
         <div class="section-right">
-
-            <p class="small-title">
-                CRAFTED EXPERIENCES
-            </p>
-
-            <h2>
-                Designed For
-                Elevated Hospitality
-            </h2>
-
+            <p class="small-title">CRAFTED EXPERIENCES</p>
+            <h2>Designed For Elevated Hospitality</h2>
             <p class="section-text">
-
                 Silverwood blends nature, architecture, and luxury
                 into immersive stays designed for modern travelers
                 seeking calm, comfort, and exclusivity.
-
             </p>
-
-            <a href="about.html"><button class="dark-btn">
-              About Us
-            </button></a>
-
+            <a href="about.html"><button class="dark-btn">About Us</button></a>
         </div>
-
     </section>
 
-
-    <!-- =========================
-         PROPERTIES
-    ========================== -->
-
+    <!-- PROPERTIES -->
     <section class="properties" id="properties">
-
         <div class="properties-header">
-
-            <p>
-                OUR COLLECTION
-            </p>
-
-            <h2>
-                Featured Properties
-            </h2>
-
+            <p>OUR COLLECTION</p>
+            <h2>Featured Properties</h2>
         </div>
 
         <div class="property-grid">
-
             <a href="mazong.html" class="property-card">
                 <img src="mazong-card.png" alt="The Mazong Hotel">
                 <div class="property-content">
@@ -267,311 +189,415 @@
                     <p>Pelling, West Sikkim</p>
                 </div>
             </a>
-
         </div>
-
     </section>
 
-<!-- =========================
-     GALLERY STRIP (auto-scrolling, pulls from the "gallery" folder)
-     Paste between the PROPERTIES section and the TESTIMONIALS section
-========================== -->
-
-<style>
-    .gstrip{ background:#000; padding:20px 0 110px; overflow:hidden; display:none; }
-    .gstrip.ready{ display:block; }
-    .gstrip-head{ text-align:center; margin-bottom:50px; padding:0 5%; }
-    .gstrip-head p{ font-size:11px; letter-spacing:4px; color:#c27935; margin-bottom:16px; text-transform:uppercase; }
-    .gstrip-head h2{ font-family:'Cormorant Garamond',serif; font-size:72px; color:#fff; }
-    .gstrip-track{ display:flex; gap:18px; width:max-content; animation:gstripMove 60s linear infinite; }
-    .gstrip:hover .gstrip-track,
-    .gstrip-track:active{ animation-play-state:paused; }
-    .gstrip-card{ width:280px; height:360px; flex-shrink:0; border-radius:18px; overflow:hidden; background:#111; display:block; }
-    .gstrip-card img,
-    .gstrip-card video{ width:100%; height:100%; object-fit:cover; display:block; }
-    .gstrip-more{ text-align:center; margin-top:44px; }
-    .gstrip-more a{ color:#c27935; text-decoration:none; font-size:12px; letter-spacing:3px; text-transform:uppercase; border-bottom:1px solid #c27935; padding-bottom:4px; }
-    @keyframes gstripMove{ to{ transform:translateX(-50%); } }
-    @media(max-width:768px){
-        .gstrip{ padding:10px 0 70px; }
-        .gstrip-head{ margin-bottom:30px; }
-        .gstrip-head h2{ font-size:40px; }
-        .gstrip-track{ gap:10px; }
-        .gstrip-card{ width:170px; height:230px; border-radius:12px; }
-    }
-    @media(prefers-reduced-motion:reduce){
-        .gstrip{ overflow-x:auto; }
-        .gstrip-track{ animation:none; }
-    }
-</style>
-
-<section class="gstrip" id="gstrip">
-    <div class="gstrip-head">
-        <p>OUR MOMENTS</p>
-        <h2>Treat to your Eyes</h2>
-    </div>
-    <div class="gstrip-track" id="gstripTrack"></div>
-    <div class="gstrip-more"><a href="gallery.html">View Full Gallery</a></div>
-</section>
-
-<script>
-(function () {
-    var OWNER = 'silibroz', REPO = 'silverwood-website', FOLDER = 'gallery';
-    var IMG = /\.(jpe?g|png|webp|gif)$/i, VID = /\.(mp4|webm|mov)$/i;
-    var section = document.getElementById('gstrip');
-    var track = document.getElementById('gstripTrack');
-
-    function build(names) {
-        var items = names.filter(function (n) { return IMG.test(n) || VID.test(n); })
-            .sort(function (a, b) { return a.localeCompare(b, undefined, {numeric:true}); });
-        if (!items.length) return;
-
-        /* repeat so the strip is always wider than the screen, then double it for a seamless loop */
-        var list = items.slice();
-        while (list.length < 8) list = list.concat(items);
-
-        function addAll() {
-            list.forEach(function (name) {
-                var src = FOLDER + '/' + encodeURIComponent(name);
-                var a = document.createElement('a');
-                a.className = 'gstrip-card';
-                a.href = 'gallery.html';
-                if (VID.test(name)) {
-                    var v = document.createElement('video');
-                    v.src = src; v.muted = true; v.loop = true; v.autoplay = true;
-                    v.playsInline = true; v.preload = 'metadata';
-                    a.appendChild(v);
-                } else {
-                    var img = document.createElement('img');
-                    img.src = src; img.alt = 'Silverwood gallery'; img.loading = 'lazy';
-                    a.appendChild(img);
-                }
-                track.appendChild(a);
-            });
+    <!-- GALLERY STRIP -->
+    <style>
+        .gstrip {
+            background: #000;
+            padding: 20px 0 110px;
+            overflow: hidden;
+            display: none;
         }
-        addAll(); addAll();
-        track.style.animationDuration = Math.max(30, list.length * 5) + 's';
-        section.classList.add('ready');
-    }
+        .gstrip.ready { display: block; }
+        .gstrip-head {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 0 5%;
+        }
+        .gstrip-head p {
+            font-size: 11px;
+            letter-spacing: 4px;
+            color: #c27935;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+        }
+        .gstrip-head h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 72px;
+            color: #fff;
+        }
+        .gstrip-track {
+            display: flex;
+            gap: 18px;
+            width: max-content;
+            animation: gstripMove 60s linear infinite;
+        }
+        .gstrip:hover .gstrip-track,
+        .gstrip-track:active { animation-play-state: paused; }
+        .gstrip-card {
+            width: 280px;
+            height: 360px;
+            flex-shrink: 0;
+            border-radius: 18px;
+            overflow: hidden;
+            background: #111;
+            display: block;
+        }
+        .gstrip-card img,
+        .gstrip-card video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .gstrip-more {
+            text-align: center;
+            margin-top: 44px;
+        }
+        .gstrip-more a {
+            color: #c27935;
+            text-decoration: none;
+            font-size: 12px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            border-bottom: 1px solid #c27935;
+            padding-bottom: 4px;
+        }
+        @keyframes gstripMove {
+            to { transform: translateX(-50%); }
+        }
+        @media(max-width:768px) {
+            .gstrip { padding: 10px 0 70px; }
+            .gstrip-head { margin-bottom: 30px; }
+            .gstrip-head h2 { font-size: 40px; }
+            .gstrip-track { gap: 10px; }
+            .gstrip-card {
+                width: 170px;
+                height: 230px;
+                border-radius: 12px;
+            }
+        }
+        @media(prefers-reduced-motion:reduce) {
+            .gstrip { overflow-x: auto; }
+            .gstrip-track { animation: none; }
+        }
+    </style>
 
-    fetch(FOLDER + '/gallery.json').then(function (r) {
-        if (!r.ok) throw new Error();
-        return r.json();
-    }).then(build).catch(function () {
-        fetch('https://api.github.com/repos/' + OWNER + '/' + REPO + '/contents/' + FOLDER)
-            .then(function (r) { if (!r.ok) throw new Error(); return r.json(); })
-            .then(function (l) { build(l.map(function (f) { return f.name; })); })
-            .catch(function () {});
-    });
-})();
-</script>
-    <!-- =========================
-         TESTIMONIALS
-    ========================== -->
+    <section class="gstrip" id="gstrip">
+        <div class="gstrip-head">
+            <p>OUR MOMENTS</p>
+            <h2>Treat to your Eyes</h2>
+        </div>
+        <div class="gstrip-track" id="gstripTrack"></div>
+        <div class="gstrip-more">
+            <a href="gallery.html">View Full Gallery</a>
+        </div>
+    </section>
 
-    <section class="testimonials">
+    <script>
+    (function () {
+        var OWNER = 'silibroz', REPO = 'silverwood-website', FOLDER = 'gallery';
+        var IMG = /\.(jpe?g|png|webp|gif)$/i, VID = /\.(mp4|webm|mov)$/i;
+        var section = document.getElementById('gstrip');
+        var track = document.getElementById('gstripTrack');
 
+        function build(names) {
+            var items = names.filter(function (n) {
+                return IMG.test(n) || VID.test(n);
+            }).sort(function (a, b) {
+                return a.localeCompare(b, undefined, {numeric:true});
+            });
+
+            if (!items.length) return;
+
+            var list = items.slice();
+            while (list.length < 8) list = list.concat(items);
+
+            function addAll() {
+                list.forEach(function (name) {
+                    var src = FOLDER + '/' + encodeURIComponent(name);
+                    var a = document.createElement('a');
+                    a.className = 'gstrip-card';
+                    a.href = 'gallery.html';
+
+                    if (VID.test(name)) {
+                        var v = document.createElement('video');
+                        v.src = src;
+                        v.muted = true;
+                        v.loop = true;
+                        v.autoplay = true;
+                        v.playsInline = true;
+                        v.preload = 'metadata';
+                        a.appendChild(v);
+                    } else {
+                        var img = document.createElement('img');
+                        img.src = src;
+                        img.alt = 'Silverwood gallery';
+                        img.loading = 'lazy';
+                        a.appendChild(img);
+                    }
+                    track.appendChild(a);
+                });
+            }
+
+            addAll();
+            addAll();
+            track.style.animationDuration = Math.max(30, list.length * 5) + 's';
+            section.classList.add('ready');
+        }
+
+        fetch(FOLDER + '/gallery.json')
+            .then(function (r) {
+                if (!r.ok) throw new Error();
+                return r.json();
+            })
+            .then(build)
+            .catch(function () {
+                fetch('https://api.github.com/repos/' + OWNER + '/' + REPO + '/contents/' + FOLDER)
+                    .then(function (r) {
+                        if (!r.ok) throw new Error();
+                        return r.json();
+                    })
+                    .then(function (l) {
+                        build(l.map(function (f) { return f.name; }));
+                    })
+                    .catch(function () {});
+            });
+    })();
+    </script>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials" id="guest-experiences">
         <div class="testimonial-header">
-
-            <p>
-                GUEST EXPERIENCES
+            <p>GUEST EXPERIENCES</p>
+            <h2>What Our Guests Say</h2>
+            <p class="testimonial-disclaimer">
+                Sample testimonials for website preview only.
+                Replace with verified guest feedback before publishing.
             </p>
-
-            <h2>
-                What Our Guests Say
-            </h2>
-
         </div>
 
         <div class="testimonial-grid">
 
+            <article class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="review">“The staff was very polite and made sure we were comfortable throughout our stay. Rooms were clean, spacious and surprisingly luxurious for the price. Food was fresh and the overall experience was really good.”</p>
+                <h4>— Rahul Sharma</h4>
+            </article>
 
-            <div class="testimonial-card">
+            <article class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="review">“Had a wonderful stay with my family. The hospitality was excellent and everyone was very helpful. The food tasted fresh and homely, just what we wanted after a long journey. Definitely a good option if you are visiting Sikkim.”</p>
+                <h4>— Arjun Das</h4>
+            </article>
 
-                <div class="stars">
-                    ★★★★★
-                </div>
+            <article class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="review">“Loved the overall experience here. The rooms were beautiful and well maintained. The staff helped us arrange local transportation without any hassle. Great hospitality and value for money.”</p>
+                <h4>— Vikram Chhetri</h4>
+            </article>
 
-                <p class="review">
+            <article class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="review">“A lovely property with very warm and welcoming staff. We especially enjoyed the food and the peaceful surroundings. Felt more like staying at someone's home than in a hotel.”</p>
+                <h4>— Priya Mukherjee</h4>
+            </article>
 
-                    "An unforgettable luxury experience surrounded
-                    by breathtaking nature and exceptional hospitality."
+            <article class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="review">“Really enjoyed our stay. The rooms were beautiful and had a premium feel. Staff members were courteous and always available whenever we needed something. The hospitality definitely made our trip more memorable.”</p>
+                <h4>— Ananya Roy</h4>
+            </article>
 
-                </p>
+            <article class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="review">“One of the nicest stays we had during our Sikkim trip. The food was fresh, the rooms were spotless and the staff was extremely helpful. Would happily recommend it to friends and family.”</p>
+                <h4>— Sneha Banerjee</h4>
+            </article>
 
-                <h4>
-                    — Priya Sharma
-                </h4>
+            <article class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="review">“The property has a lovely atmosphere and the rooms are much better than expected at this price. Everyone was so welcoming and the service was quite prompt. A very comfortable stay overall.”</p>
+                <h4>— Riya Sharma</h4>
+            </article>
 
-            </div>
+            <article class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="review">“We had a wonderful family stay here. The staff treated us with so much warmth. Food was freshly prepared and everything felt well organised. Really appreciated the homely hospitality.”</p>
+                <h4>— Pooja Agarwal</h4>
+            </article>
 
+            <article class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="review">“Beautiful rooms, good food and genuinely helpful staff. We also got assistance with arranging a cab for local sightseeing. Definitely one of the better value-for-money stays we experienced.”</p>
+                <h4>— Ishita Dutta</h4>
+            </article>
 
-            <div class="testimonial-card">
+            <article class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="review">“Stayed here for a couple of nights and had a very comfortable experience. Rooms were spacious, clean and had a luxurious touch. The staff behaviour was excellent throughout our stay.”</p>
+                <h4>— Rohit Verma</h4>
+            </article>
 
-                <div class="stars">
-                    ★★★★★
-                </div>
+            <article class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="review">“The hotel exceeded our expectations, especially considering the room rates. Food quality was good and the staff made sure everything was taken care of. Would definitely consider staying here again.”</p>
+                <h4>— Souvik Ghosh</h4>
+            </article>
 
-                <p class="review">
+            <article class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="review">“A very pleasant experience from check-in to check-out. The team was cooperative and helped us with our travel arrangements as well. Good rooms, good hospitality and excellent value for money.”</p>
+                <h4>— Amit Singh</h4>
+            </article>
 
-                    "The interiors, atmosphere, and attention to detail
-                    felt truly world class."
+            <article class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="review">“The mountain views around the property are absolutely beautiful. Rooms were comfortable and the staff made us feel very welcome. Food was fresh and the hospitality was genuinely impressive.”</p>
+                <h4>— Abhishek Sharma</h4>
+            </article>
 
-                </p>
+            <article class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="review">“We had a great experience staying here during our trip. The team was helpful with local cab arrangements and other travel requirements. A comfortable property with warm hospitality.”</p>
+                <h4>— Kunal Mehta</h4>
+            </article>
 
-                <h4>
-                    — Arjun Mehta
-                </h4>
+            <article class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="review">“Loved waking up to the beautiful surroundings. The rooms were cosy, clean and much better than we expected. The staff was very friendly and made our stay feel homely.”</p>
+                <h4>— Manish Agarwal</h4>
+            </article>
 
-            </div>
+            <article class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="review">“A beautiful stay in peaceful surroundings. The staff was extremely sweet and always ready to help us with anything. Loved the comfortable rooms and the warm hospitality.”</p>
+                <h4>— Shreya Kapoor</h4>
+            </article>
 
+            <article class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="review">“The property offers some beautiful views and the overall atmosphere is very peaceful. Rooms were clean and comfortable, and the food was freshly prepared. Really good hospitality at a reasonable price.”</p>
+                <h4>— Aditya Roy</h4>
+            </article>
 
-            <div class="testimonial-card">
+            <article class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="review">“Had a fantastic stay with my friends. The staff was friendly and very cooperative. They helped us arrange a cab for sightseeing, which made things much easier. Overall, a great experience and excellent value for money.”</p>
+                <h4>— Rahul Banerjee</h4>
+            </article>
 
-                <div class="stars">
-                    ★★★★★
-                </div>
+            <article class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="review">“Really liked the property and its surroundings. The room felt premium and was well maintained. The food was delicious and the staff made us feel at home. Would love to visit again on our next trip.”</p>
+                <h4>— Neha Gupta</h4>
+            </article>
 
-                <p class="review">
-
-                    "Silverwood perfectly balances tranquility,
-                    comfort, and modern luxury."
-
-                </p>
-
-                <h4>
-                    — Emily Johnson
-                </h4>
-
-            </div>
+            <article class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="review">“A very comfortable and memorable stay with my family. The hospitality was lovely, the rooms were spacious and the service was good. Definitely worth considering if you are looking for a quality stay.”</p>
+                <h4>— Madhumita Sen</h4>
+            </article>
 
         </div>
-
     </section>
 
+    <style>
+        .testimonial-disclaimer {
+            max-width: 720px;
+            margin: 14px auto 0;
+            font-size: 12px;
+            line-height: 1.6;
+            color: #777;
+        }
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 24px;
+        }
+        .testimonial-card {
+            min-width: 0;
+        }
+        @media (max-width: 900px) {
+            .testimonial-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+        @media (max-width: 600px) {
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 
-    <!-- =========================
-         BANNER
-    ========================== -->
-
+    <!-- BANNER -->
     <section class="luxury-banner">
-
         <div class="banner-overlay"></div>
-
         <div class="banner-content">
-
-            <p>
-                DISCOVER SILVERWOOD
-            </p>
-
-            <h2>
-                Crafted For Exceptional Escapes
-            </h2>
-
-                        <a href="#properties"><button class="primary-btn">
-                Explore Destinations
-            </button></a>
-
+            <p>DISCOVER SILVERWOOD</p>
+            <h2>Crafted For Exceptional Escapes</h2>
+            <a href="#properties"><button class="primary-btn">Explore Destinations</button></a>
         </div>
-
     </section>
 
-
-    <!-- =========================
-         FOOTER
-    ========================== -->
-
+    <!-- FOOTER -->
     <footer class="footer">
-
         <div class="footer-top">
-
             <div class="footer-brand">
-
-                <h2>
-                    SILVERWOOD
-                </h2>
-
+                <h2>SILVERWOOD</h2>
                 <p>
-
                     Curated luxury hospitality experiences
                     inspired by nature and timeless elegance.
-
                 </p>
-
             </div>
 
-
             <div class="footer-links">
-
-                <h4>
-                    Quick Links
-                </h4>
-
+                <h4>Quick Links</h4>
                 <a href="index.html">Home</a>
                 <a href="#properties">Properties</a>
                 <a href="about.html">About Us</a>
                 <a href="gallery.html">Gallery</a>
                 <a href="contact.html">Contact</a>
-
             </div>
-
 
             <div class="footer-links">
-
-                <h4>
-                    Contact
-                </h4>
-
-                <p>
-                    info@silverwoodhotels.com
-                </p>
-
-                <p>
-                    +91 76798 92404
-                </p>
-
+                <h4>Contact</h4>
+                <p>info@silverwoodhotels.com</p>
+                <p>+91 76798 92404</p>
             </div>
-
         </div>
 
         <div class="footer-bottom">
-
             © 2026 Silverwood Hotels. All rights reserved.
-
         </div>
-
     </footer>
 
     <script src="booking.js"></script>
     <script>
         initBooking({ mode: 'home' });
     </script>
-<!-- WhatsApp floating button -->
-<a href="https://wa.me/917679892404?text=Hi%20Silverwood%20Hotels!%20I%20have%20an%20enquiry."
-   class="wa-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
-    <svg viewBox="0 0 32 32" width="30" height="30" fill="#fff">
-        <path d="M16 3C9 3 3.4 8.6 3.4 15.5c0 2.3.6 4.4 1.7 6.3L3 29l7.4-2c1.8 1 3.800 1.500 5.600 1.500 7 0 12.600-5.600 12.600-12.500S23 3 16 3zm0 22.800c-1.800 0-3.500-.5-5-1.400l-.4-.2-4.400 1.200 1.200-4.300-.3-.4a10.300 10.300 0 0 1-1.600-5.500C5.500 9.800 10.200 5.200 16 5.200s10.500 4.600 10.500 10.300S21.800 25.800 16 25.800zm5.700-7.700c-.3-.2-1.900-.9-2.200-1-.3-.1-.5-.2-.7.200-.2.300-.8 1-.9 1.200-.2.200-.3.200-.6.100-.3-.2-1.300-.5-2.500-1.500-.9-.8-1.500-1.800-1.700-2.100-.2-.3 0-.5.100-.6l.5-.5c.1-.2.200-.3.300-.5.100-.2 0-.4 0-.5l-1-2.300c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.100-.8.400-.3.300-1.100 1.100-1.100 2.600s1.100 3 1.300 3.200c.2.200 2.200 3.400 5.300 4.700.7.300 1.300.5 1.700.6.700.2 1.400.2 1.900.1.600-.1 1.900-.8 2.100-1.500.3-.7.3-1.400.2-1.500-.1-.1-.3-.2-.6-.4z"/>
-    </svg>
-</a>
-<style>
-    .wa-float{
-        position:fixed;
-        right:18px;
-        bottom:18px;
-        width:56px;
-        height:56px;
-        border-radius:50%;
-        background:#25d366;
-        display:flex;
-        align-items:center;
-        justify-content:center;
-        box-shadow:0 8px 24px rgba(0,0,0,0.4);
-        z-index:2000;
-        transition:transform .2s;
-    }
-    .wa-float:hover{ transform:scale(1.08); }
-</style>
-<script src="menu.js"></script>
-</body>
 
+    <!-- WHATSAPP FLOATING BUTTON -->
+    <a href="https://wa.me/917679892404?text=Hi%20Silverwood%20Hotels!%20I%20have%20an%20enquiry."
+       class="wa-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+        <svg viewBox="0 0 32 32" width="30" height="30" fill="#fff">
+            <path d="M16 3C9 3 3.4 8.6 3.4 15.5c0 2.3.6 4.4 1.7 6.3L3 29l7.4-2c1.8 1 3.800 1.500 5.600 1.500 7 0 12.600-5.600 12.600-12.500S23 3 16 3zm0 22.800c-1.800 0-3.500-.5-5-1.400l-.4-.2-4.400 1.200 1.200-4.300-.3-.4a10.300 10.300 0 0 1-1.600-5.500C5.500 9.800 10.200 5.200 16 5.200s10.500 4.600 10.500 10.300S21.800 25.800 16 25.800zm5.700-7.700c-.3-.2-1.900-.9-2.200-1-.3-.1-.5-.2-.7.200-.2.300-.8 1-.9 1.200-.2.200-.3.200-.6.100-.3-.2-1.300-.5-2.500-1.500-.9-.8-1.500-1.800-1.700-2.100-.2-.3 0-.5.100-.6l.5-.5c.1-.2.200-.3.300-.5.100-.2 0-.4 0-.5l-1-2.300c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.100-.8.400-.3.300-1.100 1.100-1.100 2.600s1.100 3 1.300 3.200c.2.200 2.200 3.400 5.300 4.700.7.300 1.300.5 1.700.6.700.2 1.400.2 1.900.1.600-.1 1.900-.8 2.100-1.500.3-.7.3-1.400.2-1.500-.1-.1-.3-.2-.6-.4z"/>
+        </svg>
+    </a>
+
+    <style>
+        .wa-float {
+            position: fixed;
+            right: 18px;
+            bottom: 18px;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: #25d366;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+            z-index: 2000;
+            transition: transform .2s;
+        }
+        .wa-float:hover {
+            transform: scale(1.08);
+        }
+    </style>
+
+    <script src="menu.js"></script>
+</body>
 </html>
