@@ -515,8 +515,18 @@
             flex-shrink: 0;
         }
         @keyframes tmqMove { to { transform: translateX(-50%); } }
-        @media (max-width: 600px) {
-            .testimonial-card { width: 260px; }
+               .testimonial-card .review {
+            white-space: normal;
+            word-wrap: break-word;
+        }
+        @media (max-width: 768px) {
+            .testimonial-card {
+                width: 270px !important;
+                min-width: 270px !important;
+                max-width: 270px !important;
+                flex: 0 0 270px !important;
+                box-sizing: border-box;
+            }
         }
        </style>
 
