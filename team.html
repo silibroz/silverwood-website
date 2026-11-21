@@ -11,9 +11,22 @@
         .team-hero{ background:#000; text-align:center; padding:90px 5% 40px; }
         .team-hero p{ font-size:11px; letter-spacing:4px; color:#c27935; margin-bottom:16px; text-transform:uppercase; }
         .team-hero h1{ font-family:'Cormorant Garamond',serif; font-size:64px; color:#fff; font-weight:600; }
-        .team-section{ background:#000; padding:30px 5% 110px; }
-        .team-grid{ max-width:1200px; margin:0 auto; display:flex; flex-wrap:wrap; justify-content:center; gap:28px; }
-        .team-card{ width:340px; background:#000; border:1px solid #1c1c1c; border-radius:18px; overflow:hidden; text-align:center; }
+        .team-section{ background:radial-gradient(700px 320px at 50% 0,rgba(194,121,53,.14),transparent 70%),#000; padding:30px 0 110px; overflow:hidden; }
+        .team-hint{ text-align:center; color:#8a8a8a; font-size:12px; letter-spacing:3px; text-transform:uppercase; margin-bottom:34px; }
+        .team-window{ position:relative; overflow:hidden; padding:30px 0; -webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent); mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent); perspective:1200px; }
+        .team-grid{ display:flex; gap:28px; width:max-content; animation:teamScroll 40s linear infinite; padding-left:28px; }
+        .team-window:hover .team-grid, .team-grid.paused{ animation-play-state:paused; }
+        @keyframes teamScroll{ to{ transform:translateX(-50%); } }
+        .team-card{ flex:0 0 300px; width:300px; background:#0a0a0a; border:1px solid #1c1c1c; border-radius:18px; overflow:hidden; text-align:center; cursor:pointer; transform-style:preserve-3d; transition:transform .35s ease, border-color .35s ease, box-shadow .35s ease; }
+        .team-card:hover{ transform:translateY(-10px) rotateX(4deg) rotateY(-6deg) scale(1.03); border-color:#c27935; box-shadow:0 26px 50px rgba(0,0,0,.7),0 0 0 1px rgba(194,121,53,.3); }
+        .team-card.is-hidden{ visibility:hidden; }
+        .tm-overlay{ position:fixed; inset:0; z-index:3000; background:rgba(0,0,0,0); backdrop-filter:blur(0); -webkit-backdrop-filter:blur(0); perspective:1400px; pointer-events:none; transition:background .5s ease, backdrop-filter .5s ease; }
+        .tm-overlay.on{ background:rgba(0,0,0,.82); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); pointer-events:auto; }
+        .tm-zoom{ position:fixed; margin:0; flex:none; cursor:default; transition:left .75s cubic-bezier(.2,.8,.2,1), top .75s cubic-bezier(.2,.8,.2,1), width .75s cubic-bezier(.2,.8,.2,1), transform .75s cubic-bezier(.2,.8,.2,1); box-shadow:0 40px 90px rgba(0,0,0,.8),0 0 60px rgba(194,121,53,.25); border-color:#c27935; }
+        .tm-zoom:hover{ transform:none; }
+        .tm-zoom .team-info h3{ font-size:34px; }
+        .tm-close{ position:fixed; top:20px; right:20px; width:46px; height:46px; border-radius:50%; border:1px solid #c27935; background:rgba(0,0,0,.6); color:#fff; font-size:20px; cursor:pointer; opacity:0; transition:opacity .4s .3s; z-index:3100; }
+        .tm-overlay.on .tm-close{ opacity:1; }
         .team-photo{ position:relative; width:100%; aspect-ratio:1/1; background:#111; display:flex; align-items:center; justify-content:center; }
         .team-photo::before{ content:attr(data-initials); font-family:'Cormorant Garamond',serif; font-size:72px; color:#c27935; }
         .team-photo img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block; }
@@ -25,8 +38,9 @@
         @media(max-width:768px){
             .team-hero{ padding:60px 5% 24px; }
             .team-hero h1{ font-size:40px; }
-            .team-section{ padding:20px 5% 70px; }
-            .team-card{ width:100%; max-width:380px; border-radius:12px; }
+            .team-section{ padding:20px 0 70px; }
+            .team-card{ flex-basis:250px; width:250px; border-radius:12px; }
+            .team-grid{ gap:18px; animation-duration:32s; }
             .team-photo::before{ font-size:56px; }
         }
         .wa-float{ position:fixed; right:18px; bottom:18px; width:56px; height:56px; border-radius:50%; background:#25d366; display:flex; align-items:center; justify-content:center; box-shadow:0 8px 24px rgba(0,0,0,0.4); z-index:2000; transition:transform .2s; }
@@ -65,7 +79,9 @@
     </section>
 
     <section class="team-section">
-        <div class="team-grid">
+        <p class="team-hint">Tap a card to meet them</p>
+        <div class="team-window">
+        <div class="team-grid" id="teamTrack">
 
             <!-- Photo: upload team-bpc.jpg (or change the file name below). Until then, initials show. -->
             <div class="team-card">
@@ -122,7 +138,7 @@
                     <p class="team-bio"></p>
                 </div>
             </div>
-
+        </div>
         </div>
     </section>
 
@@ -165,6 +181,52 @@
         </svg>
     </a>
 
+    <div class="tm-overlay" id="tmOverlay"><button class="tm-close" id="tmClose" aria-label="Close">&#10005;</button></div>
     <script src="menu.js"></script>
+    <script>
+    (function(){
+        var track=document.getElementById('teamTrack'), ov=document.getElementById('tmOverlay'), closeBtn=document.getElementById('tmClose');
+        var orig=[].slice.call(track.children);
+        orig.forEach(function(c){ var k=c.cloneNode(true); k.setAttribute('aria-hidden','true'); track.appendChild(k); });
+        var active=null, zoom=null, src=null;
+        function targetBox(){
+            var w=Math.min(window.innerWidth*0.86, 400);
+            var h=zoom.offsetHeight; var left=(window.innerWidth-w)/2, top=Math.max(12,(window.innerHeight-h)/2);
+            return {w:w,left:left,top:top};
+        }
+        function open(card){
+            if(active) return;
+            src=card; var r=card.getBoundingClientRect();
+            zoom=card.cloneNode(true); zoom.removeAttribute('aria-hidden'); zoom.classList.add('tm-zoom');
+            zoom.style.cssText='left:'+r.left+'px;top:'+r.top+'px;width:'+r.width+'px;transform:rotateY(0deg);transition:none;';
+            ov.appendChild(zoom); active=zoom; track.classList.add('paused'); card.classList.add('is-hidden');
+            ov.classList.add('on');
+            requestAnimationFrame(function(){ requestAnimationFrame(function(){
+                var t=targetBox();
+                zoom.style.transition='';
+                zoom.style.left=t.left+'px'; zoom.style.top=t.top+'px'; zoom.style.width=t.w+'px'; zoom.style.transform='rotateY(360deg)';
+            }); });
+        }
+        function close(){
+            if(!active) return;
+            var z=active; active=null; var r=src.getBoundingClientRect();
+            ov.classList.remove('on');
+            z.style.left=r.left+'px'; z.style.top=r.top+'px'; z.style.width=r.width+'px'; z.style.transform='rotateY(0deg)';
+            setTimeout(function(){ z.remove(); src.classList.remove('is-hidden'); track.classList.remove('paused'); },700);
+        }
+        track.addEventListener('click',function(e){ var c=e.target.closest('.team-card'); if(c) open(c); });
+        ov.addEventListener('click',function(e){ if(e.target===ov||e.target===closeBtn) close(); });
+        document.addEventListener('keydown',function(e){ if(e.key==='Escape') close(); });
+        // 3D tilt on the enlarged card
+        ov.addEventListener('pointermove',function(e){
+            if(!active) return; var b=active.getBoundingClientRect();
+            var x=(e.clientX-(b.left+b.width/2))/b.width, y=(e.clientY-(b.top+b.height/2))/b.height;
+            active.style.transition='transform .15s ease-out';
+            active.style.transform='rotateY('+(360+x*16)+'deg) rotateX('+(-y*16)+'deg)';
+        });
+        ov.addEventListener('pointerleave',function(){ if(active){ active.style.transform='rotateY(360deg)'; }});
+        window.addEventListener('resize',function(){ if(active){ var t=targetBox(); active.style.left=t.left+'px'; active.style.top=t.top+'px'; active.style.width=t.w+'px'; }});
+    })();
+    </script>
 </body>
 </html>
