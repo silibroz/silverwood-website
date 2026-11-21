@@ -1,0 +1,38 @@
+.blog-hero{background:#000;text-align:center;padding:90px 5% 40px}
+.blog-hero p{font-size:11px;letter-spacing:4px;color:#c27935;margin-bottom:16px;text-transform:uppercase}
+.blog-hero h1{font-family:'Cormorant Garamond',serif;font-size:64px;color:#fff;font-weight:600}
+.blog-hero .sub{max-width:560px;margin:18px auto 0;font-size:16px;line-height:1.7;color:#bdbdbd;letter-spacing:0;text-transform:none}
+.blog-section{background:#000;padding:30px 5% 110px}
+.blog-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.blog-card{display:flex;flex-direction:column;background:#000;border:1px solid #1c1c1c;border-radius:18px;overflow:hidden;text-decoration:none;color:#fff;transition:transform .3s,border-color .3s}
+.blog-card:hover{transform:translateY(-5px);border-color:#c27935}
+.blog-card img{width:100%;aspect-ratio:16/10;object-fit:cover;display:block}
+.blog-card .bc-body{padding:24px 24px 28px;display:flex;flex-direction:column;flex:1}
+.blog-card .bc-meta{font-size:11px;letter-spacing:3px;color:#c27935;text-transform:uppercase;margin-bottom:12px}
+.blog-card h2{font-family:'Cormorant Garamond',serif;font-size:27px;font-weight:600;line-height:1.2;margin-bottom:12px}
+.blog-card p{font-size:14px;line-height:1.7;color:#bdbdbd;flex:1}
+.blog-card .bc-more{margin-top:18px;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:#c27935}
+.post-hero{background:#000;text-align:center;padding:80px 5% 30px}
+.post-hero .bc-meta{font-size:11px;letter-spacing:3px;color:#c27935;text-transform:uppercase;margin-bottom:16px}
+.post-hero h1{font-family:'Cormorant Garamond',serif;font-size:54px;line-height:1.1;color:#fff;font-weight:600;max-width:880px;margin:0 auto}
+.post-cover{background:#000;padding:10px 5% 0}
+.post-cover img{display:block;max-width:980px;width:100%;margin:0 auto;border-radius:18px;aspect-ratio:16/8;object-fit:cover}
+.post{background:#000;padding:40px 5% 90px}
+.post-body{max-width:760px;margin:0 auto;color:#cfcfcf;font-size:17px;line-height:1.85}
+.post-body h2{font-family:'Cormorant Garamond',serif;font-size:36px;color:#fff;font-weight:600;margin:44px 0 14px}
+.post-body h3{font-family:'Cormorant Garamond',serif;font-size:27px;color:#fff;font-weight:600;margin:30px 0 10px}
+.post-body p{margin-bottom:18px}
+.post-body ul,.post-body ol{margin:0 0 18px 22px}
+.post-body li{margin-bottom:8px}
+.post-body a{color:#c27935}
+.post-body strong{color:#fff}
+.post-cta{max-width:760px;margin:44px auto 0;border:1px solid #c27935;border-radius:18px;padding:30px;text-align:center;background:#0a0a0a}
+.post-cta h3{font-family:'Cormorant Garamond',serif;font-size:30px;color:#fff;margin-bottom:10px}
+.post-cta p{color:#bdbdbd;margin-bottom:20px;font-size:15px}
+.post-cta a{display:inline-block;background:#c27935;color:#fff;text-decoration:none;padding:13px 26px;border-radius:999px;font-weight:600;margin:4px}
+.post-cta a.alt{background:transparent;border:1px solid #c27935;color:#c27935}
+.post-faq details{border-bottom:1px solid #1c1c1c;padding:14px 0}
+.post-faq summary{cursor:pointer;color:#fff;font-weight:600}
+.post-faq p{margin:10px 0 0}
+@media(max-width:900px){.blog-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.blog-hero{padding:60px 5% 24px}.blog-hero h1{font-size:40px}.blog-grid{grid-template-columns:1fr;gap:20px}.blog-section{padding:20px 5% 70px}.post-hero{padding:56px 5% 20px}.post-hero h1{font-size:36px}.post-body{font-size:16px}.post-body h2{font-size:30px}.post-cta{padding:24px 18px}}
